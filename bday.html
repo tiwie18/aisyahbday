@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ulang Tahun Aisyah ke-4 🎀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background:
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,182,230,0.07) 0px,
+          rgba(255,182,230,0.07) 2px,
+          transparent 2px,
+          transparent 28px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(200,150,255,0.07) 0px,
+          rgba(200,150,255,0.07) 2px,
+          transparent 2px,
+          transparent 28px
+        ),
+        #FFF0F8;
+      font-family: 'Nunito', sans-serif;
+      color: #5A2D6B;
+      overflow-x: hidden;
+    }
+
+    /* ── Sparkles background ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(232,123,191,0.18) 0%, transparent 50%),
+        radial-gradient(circle at 80% 10%, rgba(176,110,201,0.18) 0%, transparent 45%),
+        radial-gradient(circle at 60% 80%, rgba(242,170,220,0.2) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(200,150,230,0.15) 0%, transparent 45%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '👑🌸💜👑🌸💜👑🌸💜👑🌸💜👑🌸💜👑🌸💜👑🌸💜👑🌸💜';
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      font-size: 18px;
+      letter-spacing: 12px;
+      line-height: 1.8;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+      word-break: break-all;
+      transform: rotate(-5deg);
+      transform-origin: bottom left;
+    }
+
+    /* ── COVER ── */
+    #cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 1.5rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .crown {
+      font-size: 5rem;
+      margin-bottom: 0.5rem;
+      animation: bounce 1.5s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-12px) rotate(5deg); }
+    }
+
+    .you-are-invited {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #C96BAF;
+      margin-bottom: 1rem;
+    }
+
+    .birthday-girl {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(3.5rem, 12vw, 6.5rem);
+      color: #C96BAF;
+      line-height: 1.1;
+      text-shadow: 3px 3px 0px #F5B8E0, 6px 6px 0px rgba(201,107,175,0.15);
+    }
+
+    .age-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #B06EC9, #E87BBF);
+      color: white;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-weight: 800;
+      padding: 0.5rem 2rem;
+      border-radius: 999px;
+      margin: 1.2rem 0;
+      box-shadow: 0 4px 16px rgba(176,110,201,0.35);
+    }
+
+    .princess-line {
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      font-weight: 600;
+      color: #9B4DBB;
+      margin-bottom: 2rem;
+    }
+
+    /* ── Details card ── */
+    .details-card {
+      background: white;
+      border: 2.5px solid #F2AADC;
+      border-radius: 24px;
+      padding: 2rem 2.5rem;
+      max-width: 400px;
+      width: 100%;
+      margin: 1.5rem auto;
+      box-shadow: 0 8px 32px rgba(201,107,175,0.15);
+      position: relative;
+    }
+
+    .details-card::before,
+    .details-card::after {
+      content: '🌸';
+      position: absolute;
+      font-size: 1.8rem;
+      top: -16px;
+    }
+    .details-card::before { left: 16px; }
+    .details-card::after { right: 16px; }
+
+    .detail-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px dashed #F2AADC;
+    }
+    .detail-row:last-child { border-bottom: none; }
+
+    .detail-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .detail-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #C96BAF;
+      margin-bottom: 3px;
+    }
+
+    .detail-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #5A2D6B;
+      line-height: 1.4;
+    }
+
+    .detail-sub {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #B08CC0;
+      margin-top: 2px;
+    }
+
+    /* ── Countdown ── */
+    #countdown-section {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.8rem;
+      color: #B06EC9;
+      margin-bottom: 1.5rem;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .count-box {
+      background: white;
+      border: 2px solid #F2AADC;
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      min-width: 75px;
+      box-shadow: 0 4px 12px rgba(201,107,175,0.15);
+    }
+
+    .count-num {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.2rem;
+      color: #C96BAF;
+      display: block;
+      line-height: 1;
+    }
+
+    .count-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #B08CC0;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ── Activities ── */
+    #activities {
+      padding: 2rem 1.5rem 3rem;
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+
+    .activity-card {
+      background: white;
+      border: 2px solid #F2AADC;
+      border-radius: 18px;
+      padding: 1.2rem 1rem;
+      box-shadow: 0 4px 12px rgba(201,107,175,0.1);
+    }
+
+    .activity-emoji {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #7B3FA0;
+    }
+
+    /* ── RSVP ── */
+    #rsvp {
+      background: linear-gradient(135deg, #F9E8FF, #FFE8F5);
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rsvp-box {
+      background: white;
+      border: 2.5px solid #E8AADC;
+      border-radius: 24px;
+      padding: 2rem;
+      max-width: 420px;
+      margin: 1.5rem auto 0;
+      box-shadow: 0 8px 32px rgba(201,107,175,0.15);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #C96BAF;
+      margin-bottom: 6px;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2px solid #F2AADC;
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      color: #5A2D6B;
+      outline: none;
+      background: #FFF8FC;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: #C96BAF;
+    }
+
+    .btn-rsvp {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #B06EC9, #E87BBF);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 1.2rem;
+      box-shadow: 0 4px 16px rgba(176,110,201,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-rsvp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(176,110,201,0.5);
+    }
+
+    .rsvp-thanks {
+      display: none;
+      padding: 2rem 0;
+    }
+
+    .rsvp-thanks .big-emoji {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 1rem;
+      animation: bounce 1.5s ease-in-out infinite;
+    }
+
+    .rsvp-thanks h3 {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.6rem;
+      color: #C96BAF;
+      margin-bottom: 0.5rem;
+    }
+
+    .rsvp-thanks p {
+      font-size: 0.95rem;
+      color: #9B4DBB;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.85rem;
+      color: #C96BAF;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Floating hearts ── */
+    .hearts {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 1.2rem;
+      animation: floatUp linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes floatUp {
+      0%   { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      10%  { opacity: 0.6; }
+      90%  { opacity: 0.4; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating hearts -->
+<div class="hearts" id="hearts"></div>
+
+<!-- COVER -->
+<section id="cover">
+  <div class="crown">👑</div>
+  <p class="you-are-invited">✨ You are invited ✨</p>
+  <h1 class="birthday-girl">Aisyah</h1>
+  <div class="age-badge">🎂 Turns 4! 🎂</div>
+  <p class="princess-line">🌸 A Royal Princess Birthday Party 🌸</p>
+
+  <div class="details-card">
+    <div class="detail-row">
+      <span class="detail-icon">📅</span>
+      <div>
+        <p class="detail-label">Tanggal</p>
+        <p class="detail-value">Jumat, 1 Agustus 2025</p>
+      </div>
+    </div>
+    <div class="detail-row">
+      <span class="detail-icon">⏰</span>
+      <div>
+        <p class="detail-label">Waktu</p>
+        <p class="detail-value">16:00 – 18:00 WIB</p>
+        <p class="detail-sub">Yuk datang tepat waktu ya! 💕</p>
+      </div>
+    </div>
+    <div class="detail-row">
+      <span class="detail-icon">📍</span>
+      <div>
+        <p class="detail-label">Tempat</p>
+        <p class="detail-value">Cluster Sudimara Jombang No. 22</p>
+        <p class="detail-sub">Jombang, Tangerang Selatan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section id="countdown-section">
+  <h2 class="section-title">🎀 Hitung Mundur 🎀</h2>
+  <div class="countdown">
+    <div class="count-box"><span class="count-num" id="cd-d">00</span><span class="count-label">Hari</span></div>
+    <div class="count-box"><span class="count-num" id="cd-h">00</span><span class="count-label">Jam</span></div>
+    <div class="count-box"><span class="count-num" id="cd-m">00</span><span class="count-label">Menit</span></div>
+    <div class="count-box"><span class="count-num" id="cd-s">00</span><span class="count-label">Detik</span></div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <h2 class="section-title">🌈 Seru-seruan Apa Aja? 🌈</h2>
+  <div class="activity-grid">
+    <div class="activity-card">
+      <span class="activity-emoji">🎂</span>
+      <p class="activity-name">Potong Kue Ulang Tahun</p>
+    </div>
+    <div class="activity-card">
+      <span class="activity-emoji">🎵</span>
+      <p class="activity-name">Nyanyi Lagu Ulang Tahun</p>
+    </div>
+    <div class="activity-card">
+      <span class="activity-emoji">🎮</span>
+      <p class="activity-name">Games & Lomba Seru</p>
+    </div>
+    <div class="activity-card">
+      <span class="activity-emoji">🍬</span>
+      <p class="activity-name">Goodie Bag</p>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp">
+  <h2 class="section-title">💌 Konfirmasi Kehadiran 💌</h2>
+  <p style="color:#9B4DBB; font-size:0.95rem;">Tolong konfirmasi paling lambat <strong>28 Juli 2025</strong> ya!</p>
+
+  <div class="rsvp-box">
+    <div id="rsvp-form">
+      <div class="form-group">
+        <label>Nama Kamu</label>
+        <input type="text" placeholder="Tulis nama kamu di sini 💕" id="inp-name" />
+      </div>
+      <div class="form-group">
+        <label>Nama Anak</label>
+        <input type="text" placeholder="Nama teman Aisyah" id="inp-child" />
+      </div>
+      <div class="form-group">
+        <label>Hadir?</label>
+        <select id="inp-attend">
+          <option value="yes">💜 Iya, kami hadir!</option>
+          <option value="no">😢 Maaf, tidak bisa hadir</option>
+        </select>
+      </div>
+      <button class="btn-rsvp" onclick="submitRSVP()">Kirim Konfirmasi 🎀</button>
+    </div>
+
+    <div class="rsvp-thanks" id="rsvp-thanks">
+      <span class="big-emoji">🎉</span>
+      <h3>Yeay, sampai jumpa!</h3>
+      <p id="thanks-msg">Aisyah tidak sabar ketemu kamu!</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  💜 Dengan cinta dari keluarga Aisyah 💜<br/>
+  <span style="font-size:0.8rem; font-weight:400; color:#C9A0DC;">Cluster Sudimara Jombang No.22</span>
+</footer>
+
+<script>
+  // Countdown to 1 August 2025
+  function updateCountdown() {
+    const target = new Date('2025-08-01T16:00:00');
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('countdown-section').innerHTML = '<p style="font-family:Pacifico,cursive;font-size:2rem;color:#C96BAF;">🎂 Hari ini Pesta Aisyah! 🎂</p>';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // RSVP
+  function submitRSVP() {
+    const name = document.getElementById('inp-name').value.trim();
+    const child = document.getElementById('inp-child').value.trim();
+    const attend = document.getElementById('inp-attend').value;
+    if (!name) { alert('Tulis nama kamu dulu ya! 💕'); return; }
+    document.getElementById('rsvp-form').style.display = 'none';
+    const thanks = document.getElementById('rsvp-thanks');
+    thanks.style.display = 'block';
+    if (attend === 'no') {
+      thanks.querySelector('.big-emoji').textContent = '🥺';
+      thanks.querySelector('h3').textContent = 'Sayang sekali...';
+      document.getElementById('thanks-msg').textContent = 'Semoga lain kali bisa ketemu ya, ' + name + '! 💜';
+    } else {
+      document.getElementById('thanks-msg').textContent = 'Aisyah tidak sabar ketemu ' + (child || 'kamu') + '! 🎀';
+    }
+  }
+
+  // Floating hearts
+  const emojis = ['💜','🌸','💗','✨','👸','💕','🌷','⭐'];
+  const container = document.getElementById('hearts');
+  for (let i = 0; i < 18; i++) {
+    const el = document.createElement('div');
+    el.className = 'heart';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDuration = (6 + Math.random() * 8) + 's';
+    el.style.animationDelay = (Math.random() * 8) + 's';
+    el.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+    container.appendChild(el);
+  }
+</script>
+</body>
+</html>
